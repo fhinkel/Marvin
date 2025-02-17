@@ -10,7 +10,8 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 chat = client.chats.create(model="tunedModels/sarcastic-g1851wnu1i60")
-        # model="gemini-2.0-flash-001",
+# model="gemini-2.0-flash-001",
+
 
 def echo(message, history):
     response = chat.send_message(message)
@@ -24,14 +25,16 @@ def echo(message, history):
     return response.text
 
 
-iface = gr.ChatInterface(
+ci = gr.ChatInterface(
     fn=echo,
-    textbox=gr.Textbox(placeholder="Type your message here..."),
     title="Marvin the Paranoid Android",
-    type="messages"
+    type="messages",
+    textbox=gr.Textbox(placeholder="Type your message here..."),
 )
 
-iface.launch()
+with gr.Blocks() as demo:
+    ci.render()
+
+demo.launch()
 
 # echo("what color are oranges?", None)
-
