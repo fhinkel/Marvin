@@ -9,12 +9,11 @@ load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-def echo(message, history):
-    response = client.models.generate_content(
-        model="tunedModels/sarcastic-g1851wnu1i60",
+chat = client.chats.create(model="tunedModels/sarcastic-g1851wnu1i60")
         # model="gemini-2.0-flash-001",
-        contents=message,
-    )
+
+def echo(message, history):
+    response = chat.send_message(message)
 
     if response.text is None:
         print(response.candidates[0].finish_reason)
