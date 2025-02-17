@@ -2,14 +2,12 @@ import gradio as gr
 from google import genai
 from google.genai import types
 
-
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
 
 def echo(message, history):
     response = client.models.generate_content(
@@ -30,7 +28,8 @@ def echo(message, history):
 iface = gr.ChatInterface(
     fn=echo,
     textbox=gr.Textbox(placeholder="Type your message here..."),
-    title="My helpful Bot"
+    title="Marvin the Paranoid Android",
+    type="messages"
 )
 
 iface.launch()
