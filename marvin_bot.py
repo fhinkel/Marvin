@@ -38,6 +38,7 @@ with gr.Blocks() as demo:
 
 demo.launch(
     server_port=8080,
+    server_name='0.0.0.0',
 )
 
 # ci.launch()
