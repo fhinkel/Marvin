@@ -30,12 +30,15 @@ ci = gr.ChatInterface(
     title="Marvin the Paranoid Android",
     type="messages",
     textbox=gr.Textbox(placeholder="Type your message here..."),
+
 )
 
 with gr.Blocks() as demo:
     ci.render()
 
-demo.launch()
+demo.launch(
+    server_port=8080,
+)
 
 # ci.launch()
 # echo("what color are oranges?", None)
