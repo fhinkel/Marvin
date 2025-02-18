@@ -41,7 +41,9 @@ ci = gr.ChatInterface(
 
 )
 
-with gr.Blocks() as demo:
+with gr.Blocks(
+    title="Marvin the Paranoid Android",
+) as demo:
     ci.render()
 
 demo.launch(
