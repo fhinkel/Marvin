@@ -75,4 +75,4 @@ For hot relaoding run
 gradio marvin_bot.py
 ```
 
-Open the app on [http://0.0.0.0:8080](http://0.0.0.0:8080) and chat away. Prepare to be unimpressed.
+Open the app on [http://0.0.0.0:8080](http://0.0.0.0:8080) and chat away. Prepare to be unimpressed. And depressed. 
