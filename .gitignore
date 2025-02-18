@@ -1,3 +1,4 @@
 .env
+.gradio
 venv-3.11/
 .venv
