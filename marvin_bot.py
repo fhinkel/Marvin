@@ -47,7 +47,7 @@ with gr.Blocks(
     ci.render()
 
 demo.launch(
-    server_port=8080,
+    server_port=int(os.getenv("PORT", 7860)),
     server_name='0.0.0.0',
 )
 
